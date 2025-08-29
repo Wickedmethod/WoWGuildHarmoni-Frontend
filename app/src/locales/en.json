@@ -25,22 +25,22 @@
   "lang": {
     "label": "Language",
     "en": "English",
-  "es": "Spanish",
-  "da": "Danish"
+    "es": "Spanish",
+    "da": "Danish"
   },
   "nav": {
-  "projectsUiDemo": "Projects UI Demo",
-  "home": "Home",
-  "about": "About",
-  "projects": "Projects",
-  "showcase": "Showcase",
-  "files": "Files",
-  "components": "Components",
-  "menu": "Menu",
-  "close": "Close",
-  "forum": "Forum",
-  "roster": "Roster",
-  "events": "Events",
-  "recruitment": "Recruitment"
+    "projectsUiDemo": "Projects UI Demo",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "showcase": "Showcase",
+    "files": "Files",
+    "components": "Components",
+    "menu": "Menu",
+    "close": "Close",
+    "forum": "Forum",
+    "roster": "Roster",
+    "events": "Events",
+    "recruitment": "Recruitment"
   }
 }

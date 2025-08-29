@@ -37,10 +37,10 @@
     "files": "Filer",
     "components": "Komponenter",
     "menu": "Menu",
-  "close": "Luk",
-  "forum": "Forum",
-  "roster": "Hold",
-  "events": "Begivenheder",
-  "recruitment": "Rekruttering"
+    "close": "Luk",
+    "forum": "Forum",
+    "roster": "Hold",
+    "events": "Begivenheder",
+    "recruitment": "Rekruttering"
   }
 }

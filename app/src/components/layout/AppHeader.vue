@@ -31,51 +31,57 @@ const ui = useUiStore();
     class="w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60"
   >
     <div class="mx-auto max-w-5xl px-4 h-14 flex items-center justify-between">
-    <!-- Brand -->
-  <RouterLink to="/" class="font-semibold hover:text-primary">Harmoni</RouterLink>
+      <!-- Brand -->
+      <RouterLink to="/" class="font-semibold hover:text-primary">Harmoni</RouterLink>
 
       <!-- Desktop nav -->
-  <nav class="hidden sm:flex items-center gap-4 text-sm font-medium">
+      <nav class="hidden sm:flex items-center gap-4 text-sm font-medium">
         <RouterLink v-slot="{ href, navigate, isActive }" custom to="/">
-          <a
-            :href="href"
-            :class="['px-2', isActive ? 'text-primary font-semibold' : 'hover:text-primary']"
-      @click="navigate"
-          >
-            {{$t('nav.home')}}
-          </a>
-  </RouterLink>
-  <RouterLink v-slot="{ href, navigate, isActive }" custom to="/about">
-          <a
-            :href="href"
-            :class="['px-2', isActive ? 'text-primary font-semibold' : 'hover:text-primary']"
-      @click="navigate"
-          >
-            {{$t('nav.about')}}
-          </a>
-  </RouterLink>
-  <RouterLink v-slot="{ href, navigate, route }" custom to="/projects">
-          <a
-            :href="href"
-            :class="[
-              'px-2',
-              (route.path === '/projects') ? 'text-primary font-semibold' : 'hover:text-primary'
-            ]"
-      @click="navigate"
-          >
-            {{$t('nav.projects')}}
-          </a>
-        </RouterLink>
-  <RouterLink v-slot="{ href, navigate, isActive }" custom to="/forum">
-  <RouterLink to="/roster" class="px-2 hover:text-primary">{{$t('nav.roster')}}</RouterLink>
-  <RouterLink to="/events" class="px-2 hover:text-primary">{{$t('nav.events')}}</RouterLink>
-  <RouterLink to="/recruitment" class="px-2 hover:text-primary">{{$t('nav.recruitment')}}</RouterLink>
           <a
             :href="href"
             :class="['px-2', isActive ? 'text-primary font-semibold' : 'hover:text-primary']"
             @click="navigate"
           >
-      {{$t('nav.forum')}}
+            {{ $t('nav.home') }}
+          </a>
+        </RouterLink>
+        <RouterLink v-slot="{ href, navigate, isActive }" custom to="/about">
+          <a
+            :href="href"
+            :class="['px-2', isActive ? 'text-primary font-semibold' : 'hover:text-primary']"
+            @click="navigate"
+          >
+            {{ $t('nav.about') }}
+          </a>
+        </RouterLink>
+        <RouterLink v-slot="{ href, navigate, route }" custom to="/projects">
+          <a
+            :href="href"
+            :class="[
+              'px-2',
+              route.path === '/projects' ? 'text-primary font-semibold' : 'hover:text-primary',
+            ]"
+            @click="navigate"
+          >
+            {{ $t('nav.projects') }}
+          </a>
+        </RouterLink>
+        <RouterLink v-slot="{ href, navigate, isActive }" custom to="/forum">
+          <RouterLink to="/roster" class="px-2 hover:text-primary">{{
+            $t('nav.roster')
+          }}</RouterLink>
+          <RouterLink to="/events" class="px-2 hover:text-primary">{{
+            $t('nav.events')
+          }}</RouterLink>
+          <RouterLink to="/recruitment" class="px-2 hover:text-primary">{{
+            $t('nav.recruitment')
+          }}</RouterLink>
+          <a
+            :href="href"
+            :class="['px-2', isActive ? 'text-primary font-semibold' : 'hover:text-primary']"
+            @click="navigate"
+          >
+            {{ $t('nav.forum') }}
           </a>
         </RouterLink>
 
@@ -83,22 +89,25 @@ const ui = useUiStore();
         <NavigationMenu class="ml-2">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>{{$t('nav.showcase')}}</NavigationMenuTrigger>
+              <NavigationMenuTrigger>{{ $t('nav.showcase') }}</NavigationMenuTrigger>
               <NavigationMenuContent class="w-[320px]">
                 <div class="grid gap-1 p-2">
                   <NavigationMenuLink as-child>
                     <RouterLink to="/showcase" class="rounded px-2 py-2 hover:bg-accent/40">
-                      {{$t('nav.files')}}
+                      {{ $t('nav.files') }}
                     </RouterLink>
                   </NavigationMenuLink>
                   <NavigationMenuLink as-child>
                     <RouterLink v-slot="{ href, navigate, isActive }" custom to="/components">
                       <a
                         :href="href"
-                        :class="['rounded px-2 py-2 hover:bg-accent/40', isActive ? 'bg-accent/60 text-primary' : '']"
-            @click="navigate"
+                        :class="[
+                          'rounded px-2 py-2 hover:bg-accent/40',
+                          isActive ? 'bg-accent/60 text-primary' : '',
+                        ]"
+                        @click="navigate"
                       >
-                        {{$t('nav.components')}}
+                        {{ $t('nav.components') }}
                       </a>
                     </RouterLink>
                   </NavigationMenuLink>
@@ -106,10 +115,13 @@ const ui = useUiStore();
                     <RouterLink v-slot="{ href, navigate, isActive }" custom to="/projects/ui-demo">
                       <a
                         :href="href"
-                        :class="['rounded px-2 py-2 hover:bg-accent/40', isActive ? 'bg-accent/60 text-primary' : '']"
-            @click="navigate"
+                        :class="[
+                          'rounded px-2 py-2 hover:bg-accent/40',
+                          isActive ? 'bg-accent/60 text-primary' : '',
+                        ]"
+                        @click="navigate"
                       >
-                        {{$t('nav.projectsUiDemo')}}
+                        {{ $t('nav.projectsUiDemo') }}
                       </a>
                     </RouterLink>
                   </NavigationMenuLink>
@@ -131,27 +143,29 @@ const ui = useUiStore();
         <!-- Desktop: preferences -->
         <div class="ml-2 flex items-center gap-3 pl-3 border-l">
           <!-- Theme toggle (light/dark) -->
-            <Button
-              variant="ghost"
-              size="icon"
-              :aria-label="$t('theme.label') as string"
-              @click="ui.theme = ui.theme === 'dark' ? 'light' : 'dark'"
-            >
-              <Sun class="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon class="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span class="sr-only">{{$t('theme.label')}}</span>
-            </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            :aria-label="$t('theme.label') as string"
+            @click="ui.theme = ui.theme === 'dark' ? 'light' : 'dark'"
+          >
+            <Sun class="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon
+              class="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+            />
+            <span class="sr-only">{{ $t('theme.label') }}</span>
+          </Button>
 
           <!-- Language select -->
-          <label class="sr-only" for="lang-select">{{$t('lang.label')}}</label>
+          <label class="sr-only" for="lang-select">{{ $t('lang.label') }}</label>
           <select
             id="lang-select"
             v-model="ui.locale as any"
             class="border rounded-md px-2 py-1 bg-background text-foreground"
           >
-            <option value="en">{{$t('lang.en')}}</option>
-            <option value="es">{{$t('lang.es')}}</option>
-            <option value="da">{{$t('lang.da')}}</option>
+            <option value="en">{{ $t('lang.en') }}</option>
+            <option value="es">{{ $t('lang.es') }}</option>
+            <option value="da">{{ $t('lang.da') }}</option>
           </select>
         </div>
       </nav>
@@ -177,7 +191,7 @@ const ui = useUiStore();
           </SheetTrigger>
           <SheetContent side="right" class="w-[85vw] sm:w-80">
             <SheetHeader>
-              <SheetTitle>{{$t('nav.menu')}}</SheetTitle>
+              <SheetTitle>{{ $t('nav.menu') }}</SheetTitle>
             </SheetHeader>
             <div class="py-2">
               <nav class="grid gap-1">
@@ -186,22 +200,22 @@ const ui = useUiStore();
                     to="/"
                     class="px-4 py-3 text-base rounded-md hover:bg-accent/40 focus-visible:ring-0 focus:outline-none"
                   >
-                  <NavigationMenuLink as-child>
-                    <RouterLink to="/roster" class="rounded px-2 py-2 hover:bg-accent/40">
-                      {{$t('nav.roster')}}
-                    </RouterLink>
-                  </NavigationMenuLink>
-                  <NavigationMenuLink as-child>
-                    <RouterLink to="/events" class="rounded px-2 py-2 hover:bg-accent/40">
-                      {{$t('nav.events')}}
-                    </RouterLink>
-                  </NavigationMenuLink>
-                  <NavigationMenuLink as-child>
-                    <RouterLink to="/recruitment" class="rounded px-2 py-2 hover:bg-accent/40">
-                      {{$t('nav.recruitment')}}
-                    </RouterLink>
-                  </NavigationMenuLink>
-                    {{$t('nav.home')}}
+                    <NavigationMenuLink as-child>
+                      <RouterLink to="/roster" class="rounded px-2 py-2 hover:bg-accent/40">
+                        {{ $t('nav.roster') }}
+                      </RouterLink>
+                    </NavigationMenuLink>
+                    <NavigationMenuLink as-child>
+                      <RouterLink to="/events" class="rounded px-2 py-2 hover:bg-accent/40">
+                        {{ $t('nav.events') }}
+                      </RouterLink>
+                    </NavigationMenuLink>
+                    <NavigationMenuLink as-child>
+                      <RouterLink to="/recruitment" class="rounded px-2 py-2 hover:bg-accent/40">
+                        {{ $t('nav.recruitment') }}
+                      </RouterLink>
+                    </NavigationMenuLink>
+                    {{ $t('nav.home') }}
                   </RouterLink>
                 </SheetClose>
                 <SheetClose as-child>
@@ -209,7 +223,7 @@ const ui = useUiStore();
                     to="/about"
                     class="px-4 py-3 text-base rounded-md hover:bg-accent/40 focus-visible:ring-0 focus:outline-none"
                   >
-                    {{$t('nav.about')}}
+                    {{ $t('nav.about') }}
                   </RouterLink>
                 </SheetClose>
                 <SheetClose as-child>
@@ -217,7 +231,7 @@ const ui = useUiStore();
                     to="/projects"
                     class="px-4 py-3 text-base rounded-md hover:bg-accent/40 focus-visible:ring-0 focus:outline-none"
                   >
-                    {{$t('nav.projects')}}
+                    {{ $t('nav.projects') }}
                   </RouterLink>
                 </SheetClose>
                 <SheetClose as-child>
@@ -225,7 +239,7 @@ const ui = useUiStore();
                     to="/forum"
                     class="px-4 py-3 text-base rounded-md hover:bg-accent/40 focus-visible:ring-0 focus:outline-none"
                   >
-                    {{$t('nav.forum')}}
+                    {{ $t('nav.forum') }}
                   </RouterLink>
                 </SheetClose>
                 <SheetClose as-child>
@@ -233,7 +247,7 @@ const ui = useUiStore();
                     to="/roster"
                     class="px-4 py-3 text-base rounded-md hover:bg-accent/40 focus-visible:ring-0 focus:outline-none"
                   >
-                    {{$t('nav.roster')}}
+                    {{ $t('nav.roster') }}
                   </RouterLink>
                 </SheetClose>
                 <SheetClose as-child>
@@ -241,7 +255,7 @@ const ui = useUiStore();
                     to="/events"
                     class="px-4 py-3 text-base rounded-md hover:bg-accent/40 focus-visible:ring-0 focus:outline-none"
                   >
-                    {{$t('nav.events')}}
+                    {{ $t('nav.events') }}
                   </RouterLink>
                 </SheetClose>
                 <SheetClose as-child>
@@ -249,18 +263,20 @@ const ui = useUiStore();
                     to="/recruitment"
                     class="px-4 py-3 text-base rounded-md hover:bg-accent/40 focus-visible:ring-0 focus:outline-none"
                   >
-                    {{$t('nav.recruitment')}}
+                    {{ $t('nav.recruitment') }}
                   </RouterLink>
                 </SheetClose>
                 <div class="px-1 pt-3">
-                  <div class="text-xs text-muted-foreground mb-2 px-3">{{$t('nav.showcase')}}</div>
+                  <div class="text-xs text-muted-foreground mb-2 px-3">
+                    {{ $t('nav.showcase') }}
+                  </div>
                   <div class="grid gap-1">
                     <SheetClose as-child>
                       <RouterLink
                         to="/showcase"
                         class="px-4 py-3 rounded-md text-left hover:bg-accent/40 focus-visible:ring-0 focus:outline-none"
                       >
-                        {{$t('nav.files')}}
+                        {{ $t('nav.files') }}
                       </RouterLink>
                     </SheetClose>
                     <SheetClose as-child>
@@ -268,17 +284,24 @@ const ui = useUiStore();
                         to="/components"
                         class="px-4 py-3 rounded-md text-left hover:bg-accent/40 focus-visible:ring-0 focus:outline-none"
                       >
-                        {{$t('nav.components')}}
+                        {{ $t('nav.components') }}
                       </RouterLink>
                     </SheetClose>
                     <SheetClose as-child>
-                  <RouterLink v-slot="{ href, navigate, isActive }" custom to="/projects/ui-demo">
+                      <RouterLink
+                        v-slot="{ href, navigate, isActive }"
+                        custom
+                        to="/projects/ui-demo"
+                      >
                         <a
                           :href="href"
-                          :class="['px-4 py-3 rounded-md text-left hover:bg-accent/40 focus-visible:ring-0 focus:outline-none', isActive ? 'bg-accent/60 text-primary' : '']"
-                @click="navigate"
+                          :class="[
+                            'px-4 py-3 rounded-md text-left hover:bg-accent/40 focus-visible:ring-0 focus:outline-none',
+                            isActive ? 'bg-accent/60 text-primary' : '',
+                          ]"
+                          @click="navigate"
                         >
-                          {{$t('nav.projectsUiDemo')}}
+                          {{ $t('nav.projectsUiDemo') }}
                         </a>
                       </RouterLink>
                     </SheetClose>
@@ -292,30 +315,36 @@ const ui = useUiStore();
                 </div>
                 <!-- Mobile: preferences -->
                 <div class="px-1 pt-4">
-                  <div class="text-xs text-muted-foreground mb-2 px-3">{{$t('theme.label')}} / {{$t('lang.label')}}</div>
+                  <div class="text-xs text-muted-foreground mb-2 px-3">
+                    {{ $t('theme.label') }} / {{ $t('lang.label') }}
+                  </div>
                   <div class="grid gap-3 px-3">
                     <div class="flex items-center justify-between">
-                      <span class="text-sm">{{$t('theme.label')}}</span>
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          :aria-label="$t('theme.label') as string"
-                          @click="ui.theme = ui.theme === 'dark' ? 'light' : 'dark'"
-                        >
-                          <Sun class="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                          <Moon class="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                          <span class="sr-only">{{$t('theme.label')}}</span>
-                        </Button>
+                      <span class="text-sm">{{ $t('theme.label') }}</span>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        :aria-label="$t('theme.label') as string"
+                        @click="ui.theme = ui.theme === 'dark' ? 'light' : 'dark'"
+                      >
+                        <Sun
+                          class="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+                        />
+                        <Moon
+                          class="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+                        />
+                        <span class="sr-only">{{ $t('theme.label') }}</span>
+                      </Button>
                     </div>
                     <div class="flex items-center justify-between gap-3">
-                      <span class="text-sm">{{$t('lang.label')}}</span>
+                      <span class="text-sm">{{ $t('lang.label') }}</span>
                       <select
                         v-model="ui.locale as any"
                         class="border rounded-md px-2 py-1 bg-background text-foreground"
                       >
-                        <option value="en">{{$t('lang.en')}}</option>
-                        <option value="es">{{$t('lang.es')}}</option>
-                        <option value="da">{{$t('lang.da')}}</option>
+                        <option value="en">{{ $t('lang.en') }}</option>
+                        <option value="es">{{ $t('lang.es') }}</option>
+                        <option value="da">{{ $t('lang.da') }}</option>
                       </select>
                     </div>
                   </div>
@@ -324,7 +353,7 @@ const ui = useUiStore();
             </div>
             <SheetFooter class="p-4 pt-0">
               <SheetClose as-child>
-                <Button class="w-full" variant="secondary">{{$t('nav.close')}}</Button>
+                <Button class="w-full" variant="secondary">{{ $t('nav.close') }}</Button>
               </SheetClose>
             </SheetFooter>
           </SheetContent>

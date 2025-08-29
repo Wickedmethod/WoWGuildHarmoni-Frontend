@@ -7,7 +7,7 @@ describe('forum.api seeding and CRUD', () => {
     // clear any persisted data
     try {
       localStorage.clear();
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       // Ignore if localStorage is not available in this environment
     }

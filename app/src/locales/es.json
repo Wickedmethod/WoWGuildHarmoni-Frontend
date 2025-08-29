@@ -25,22 +25,22 @@
   "lang": {
     "label": "Idioma",
     "en": "Inglés",
-  "es": "Español",
-  "da": "Danés"
+    "es": "Español",
+    "da": "Danés"
   },
   "nav": {
-  "projectsUiDemo": "Demo de UI de Proyectos",
-  "home": "Inicio",
-  "about": "Acerca de",
-  "projects": "Proyectos",
-  "showcase": "Showcase",
-  "files": "Archivos",
-  "components": "Componentes",
-  "menu": "Menú",
-  "close": "Cerrar",
-  "forum": "Foro",
-  "roster": "Miembros",
-  "events": "Eventos",
-  "recruitment": "Reclutamiento"
+    "projectsUiDemo": "Demo de UI de Proyectos",
+    "home": "Inicio",
+    "about": "Acerca de",
+    "projects": "Proyectos",
+    "showcase": "Showcase",
+    "files": "Archivos",
+    "components": "Componentes",
+    "menu": "Menú",
+    "close": "Cerrar",
+    "forum": "Foro",
+    "roster": "Miembros",
+    "events": "Eventos",
+    "recruitment": "Reclutamiento"
   }
 }
