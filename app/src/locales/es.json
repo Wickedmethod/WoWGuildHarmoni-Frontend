@@ -1,0 +1,46 @@
+{
+  "title": "Vue + shadcn-vue + Tailwind v4",
+  "subtitle": "Plantilla con TanStack Query y Sonner",
+  "buttons": {
+    "showToast": "Mostrar aviso",
+    "openDialog": "Abrir diálogo"
+  },
+  "dialog": {
+    "title": "Diálogo de ejemplo",
+    "text": "Este es un diálogo de shadcn-vue."
+  },
+  "card": {
+    "title": "Demo de tarjeta"
+  },
+  "tabs": {
+    "account": "Cuenta",
+    "password": "Contraseña"
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  },
+  "lang": {
+    "label": "Idioma",
+    "en": "Inglés",
+  "es": "Español",
+  "da": "Danés"
+  },
+  "nav": {
+  "projectsUiDemo": "Demo de UI de Proyectos",
+  "home": "Inicio",
+  "about": "Acerca de",
+  "projects": "Proyectos",
+  "showcase": "Showcase",
+  "files": "Archivos",
+  "components": "Componentes",
+  "menu": "Menú",
+  "close": "Cerrar",
+  "forum": "Foro",
+  "roster": "Miembros",
+  "events": "Eventos",
+  "recruitment": "Reclutamiento"
+  }
+}

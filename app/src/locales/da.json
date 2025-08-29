@@ -1,0 +1,46 @@
+{
+  "title": "Vue + shadcn-vue + Tailwind v4",
+  "subtitle": "Starter med TanStack Query og Sonner",
+  "buttons": {
+    "showToast": "Vis toast",
+    "openDialog": "Åbn dialog"
+  },
+  "dialog": {
+    "title": "Eksempel-dialog",
+    "text": "Dette er en shadcn-vue dialog."
+  },
+  "card": {
+    "title": "Kort-demo"
+  },
+  "tabs": {
+    "account": "Konto",
+    "password": "Adgangskode"
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Lyst",
+    "dark": "Mørkt",
+    "system": "System"
+  },
+  "lang": {
+    "label": "Sprog",
+    "en": "Engelsk",
+    "es": "Spansk",
+    "da": "Dansk"
+  },
+  "nav": {
+    "projectsUiDemo": "Projekter UI-demo",
+    "home": "Hjem",
+    "about": "Om",
+    "projects": "Projekter",
+    "showcase": "Showcase",
+    "files": "Filer",
+    "components": "Komponenter",
+    "menu": "Menu",
+  "close": "Luk",
+  "forum": "Forum",
+  "roster": "Hold",
+  "events": "Begivenheder",
+  "recruitment": "Rekruttering"
+  }
+}
